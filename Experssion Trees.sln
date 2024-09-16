@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Experssion Trees", "Experssion Trees\Experssion Trees.csproj", "{A22F0B8F-9F27-4843-A9DA-D41C1E33034A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A22F0B8F-9F27-4843-A9DA-D41C1E33034A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A22F0B8F-9F27-4843-A9DA-D41C1E33034A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A22F0B8F-9F27-4843-A9DA-D41C1E33034A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A22F0B8F-9F27-4843-A9DA-D41C1E33034A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53894550-CD33-415E-A45A-A29EA53103DD}
+	EndGlobalSection
+EndGlobal
