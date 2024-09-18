@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passenger Filtering with Expression Trees in .NET MVC</title>
-</head>
-<body>
-
-<h1>Passenger Filtering with Expression Trees in .NET MVC</h1>
+ 
+<h1>Filtering with Expression Trees in .NET MVC</h1>
 
 <p>This project demonstrates how to use <strong>Expression Trees</strong> in a .NET Core MVC application to enhance the performance of filtering large datasets. The application is designed to filter passenger information based on various criteria (like survival, class, sex, and age) using two approaches: basic LINQ queries and dynamically constructed queries with <strong>Expression Trees</strong>.</p>
 
@@ -66,7 +58,6 @@
 <ol>
     <li>Clone the repository or download the project files.</li>
     <li>Open the project in your preferred IDE (e.g., Visual Studio).</li>
-    <li>Ensure that the database connection is properly configured in <code>appsettings.json</code>.</li>
     <li>Run the project by pressing <code>F5</code> or using the Run button.</li>
 </ol>
 
