@@ -22,7 +22,7 @@
 <ul>
     <li><a href="https://dotnet.microsoft.com/download" target="_blank">.NET Core SDK</a> (version 6.0 or higher)</li>
     <li>SQL Server or any database supported by Entity Framework Core</li>
-    <li>An IDE like Visual Studio or JetBrains Rider</li>
+    <li>An IDE like Visual Studio </li>
 </ul>
 
 <h2>Project Structure</h2>
