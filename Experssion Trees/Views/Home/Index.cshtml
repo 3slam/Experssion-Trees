@@ -1,113 +1,79 @@
-﻿@* @model List<Passenger>
-@{
-    ViewData["Title"] = "Home Page";
-}
-<form id="mainForm" method="post">
-    <div class="text-center">
-        <h1 class="display-4">Passengers of the R.M.S Titanic</h1>
-        <table>
-            <tr>
-                <td>
-                    Survived?
-                </td>
-                <td>
-                    <select id="survived" name="survived">
-                        <option value=""></option>
-                        <option value="Survived">Survived</option>
-                        <option value="Perished">Perished</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    PClass
-                </td>
-                <td>
-                     <select id='pClass' name='pClass'>
-                         <option value=""></option>
-                         <option value='1'>1</option>
-                         <option value='2'>2</option>
-                         <option value='3'>3</option>
-                     </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Sex
-                </td>
-                <td>
-                    <select id='sex' name='sex'>
-                        <option value=""></option>
-                        <option value='male'>Male</option>
-                        <option value='female'>Female</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Age
-                </td>
-                <td>
-                    <input type="text" id="age" name="age" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Minumum Fare
-                </td>
-                <td>
-                    <input type="text" id="minimumFare" name='minimumFare' />
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <input type="submit" value="Filter Passengers" />
-                </td>
-            </tr>
-        </table>
-       
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        Survived
-                    </th>
-                    <th>
-                        PClass
-                    </th>
-                    <th>
-                        Name
-                    </th>
-                    <th>
-                        Sex
-                    </th>
-                    <th>
-                        Age
-                    </th>
-                    <th>
-                        SiblingsOrSpouse
-                    </th>
-                    <th>
-                        ParentOrChildren
-                    </th>
-                    <th>
-                        Fare
-                    </th>
-                </tr>
-            </thead>
-        @foreach(var passenger in Model)
+﻿@model PassengerViewModel
+
+<form method="post" asp-action="filter" class="mb-4">
+    <div class="row">
+        <!-- Survived dropdown -->
+        <div class="col-md-2">
+            <label for="Survived" class="form-label">Survived</label>
+            <select asp-for="Filter.Survived" class="form-control">
+                <option value="">-- Select --</option>
+                <option value="True">Yes</option>
+                <option value="False">No</option>
+            </select>
+        </div>
+
+        <!-- Passenger Class dropdown -->
+        <div class="col-md-2">
+            <label for="PClass" class="form-label">Passenger Class</label>
+            <select asp-for="Filter.PClass" class="form-control">
+                <option value="">-- Select Class --</option>
+                <option value="1">1st Class</option>
+                <option value="2">2nd Class</option>
+                <option value="3">3rd Class</option>
+            </select>
+        </div>
+
+        <!-- Sex dropdown -->
+        <div class="col-md-2">
+            <label for="Sex" class="form-label">Sex</label>
+            <select asp-for="Filter.Sex" class="form-control">
+                <option value="">-- Select Sex --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <!-- Age input (leave as text) -->
+        <div class="col-md-2">
+            <label for="Age" class="form-label">Age</label>
+            <input asp-for="Filter.Age" class="form-control" />
+        </div>
+
+        <!-- Filter button -->
+        <div class="col-md-2 d-flex align-items-end">
+            <button type="submit" class="btn btn-primary w-100">Filter</button>
+        </div>
+    </div>
+</form>
+
+
+<!-- Passenger data table -->
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>Id</th>
+            <th>Survived</th>
+            <th>Passenger Class</th>
+            <th>Name</th>
+            <th>Sex</th>
+            <th>Age</th>
+            <th>Siblings/Spouse</th>
+            <th>Parent/Children</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var passenger in Model.Passengers)
         {
             <tr>
-                <td>@passenger.Survived</td>
-                <td>@passenger.PClass</td>
+                <td>@passenger.Id</td>
+                <td>@(passenger.Survived ? "Yes" : "No")</td>
+                <td>@passenger.PassengerClass</td>
                 <td>@passenger.Name</td>
                 <td>@passenger.Sex</td>
                 <td>@passenger.Age</td>
                 <td>@passenger.SiblingsOrSpouse</td>
                 <td>@passenger.ParentOrChildren</td>
-                <td>@passenger.Fare</td>
             </tr>
         }
-        </table>
-    </div>
-</form> *@
+    </tbody>
+</table>

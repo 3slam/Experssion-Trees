@@ -1,3 +1,6 @@
+using Experssion_Trees.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Experssion_Trees
 {
     public class Program
@@ -8,9 +11,10 @@ namespace Experssion_Trees
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDbContext<ApplicationDbContext>( optionsAction =>
+                optionsAction.UseSqlServer("Server=DESKTOP-HF7R40U;Database=Passenger;Integrated Security=true;Encrypt=true;TrustServerCertificate=true;"));
             var app = builder.Build();
-
+           
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
